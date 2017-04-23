@@ -1,5 +1,8 @@
-Mastodon
+Mastodon (m.okadajp.org instance)
 ========
+This repository contains source code of https://m.okadajp.org/ Mastodon instance. 
+The instance supports syntax highlighting with hightlight-js, and MathJax with mathjax-rails gem.
+For original Mastodon sources, please refer to the original repo (tootsuite/mastodon). 
 
 [![Build Status](http://img.shields.io/travis/tootsuite/mastodon.svg)][travis]
 [![Code Climate](https://img.shields.io/codeclimate/github/tootsuite/mastodon.svg)][code_climate]
