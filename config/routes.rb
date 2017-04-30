@@ -64,14 +64,15 @@ Rails.application.routes.draw do
       resources :recovery_codes, only: [:create]
       resource :confirmation, only: [:new, :create]
     end
+
+    resource :follower_domains, only: [:show, :update]
   end
 
   resources :media, only: [:show]
   resources :tags,  only: [:show]
 
   # Remote follow
-  get  :authorize_follow, to: 'authorize_follow#new'
-  post :authorize_follow, to: 'authorize_follow#create'
+  resource :authorize_follow, only: [:show, :create]
 
   namespace :admin do
     resources :pubsubhubbub, only: [:index]
@@ -110,9 +111,7 @@ Rails.application.routes.draw do
     # ActivityPub
     namespace :activitypub do
       get '/users/:id/outbox', to: 'outbox#show', as: :outbox
-
       get '/statuses/:id', to: 'activities#show_status', as: :status
-
       resources :notes, only: [:show]
     end
 
